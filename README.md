@@ -346,3 +346,53 @@ Ensures financial data is processed safely and reduces the risk of fraud or data
 ---
 
 By implementing these security measures, the AirBnB Clone Project ensures a **safe, reliable, and trustworthy** experience for all users — from login to booking and payment.
+## ⚙️ CI/CD Pipeline
+
+The AirBnB Clone Project follows modern DevOps practices using **Continuous Integration (CI)** and **Continuous Deployment (CD)** to streamline development and delivery.
+
+---
+
+### 🔄 What is CI/CD?
+**Continuous Integration (CI)** is the process of automatically testing and validating code changes whenever developers commit them to the repository.  
+**Continuous Deployment (CD)** ensures that once the code passes all tests, it is automatically deployed to the production environment (or a staging environment) without manual intervention.
+
+Together, these practices make the development workflow **faster**, **safer**, and **more reliable**.
+
+---
+
+### 🚀 Why CI/CD is Important
+- **Automation:** Reduces manual effort by automating build, test, and deployment steps.  
+- **Early Bug Detection:** Ensures code quality by running automated tests on every push or pull request.  
+- **Consistency:** Guarantees that every deployment is performed the same way, minimizing human error.  
+- **Faster Delivery:** Enables quick releases of new features and updates without downtime.  
+- **Collaboration:** Helps teams integrate code changes frequently and with confidence.
+
+---
+
+### 🧰 Tools Used
+1. **GitHub Actions** – Automates testing, building, and deployment directly from the GitHub repository.  
+2. **Docker** – Containerizes the application to ensure consistent behavior across development, staging, and production environments.  
+3. **pytest / unittest** – Used to automatically run backend tests during the CI process.  
+4. **Render / AWS / Heroku** – Used for continuous deployment to a live hosting environment.  
+5. **PostgreSQL (via Docker)** – Provides a consistent database environment for testing and production.  
+
+---
+
+### 🛠️ Example CI/CD Workflow (GitHub Actions)
+1. Developer pushes code to GitHub (`main` branch or feature branch).  
+2. **GitHub Actions** triggers automatically to:  
+   - Run linting and style checks.  
+   - Execute all backend tests with **pytest**.  
+   - Build the Docker image and push to the registry.  
+3. If all tests pass, the updated version is **deployed automatically** to the production environment using Docker containers.
+
+---
+
+### ✅ Benefits to the Project
+- Maintains **high code quality** through automated testing.  
+- Reduces downtime during updates and deployments.  
+- Ensures every version released is **stable**, **tested**, and **ready for users**.
+
+---
+
+By implementing a CI/CD pipeline, the AirBnB Clone Project achieves a **smoother development workflow**, **faster iteration**, and **greater reliability** — all essential for modern web applications.
