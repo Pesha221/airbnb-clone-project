@@ -266,3 +266,83 @@ Helps users stay informed in real time about their account and transaction activ
 ---
 
 These features collectively create a full-fledged property rental platform that mimics Airbnb’s core functionality — offering a seamless experience for both hosts and guests.
+## 🔒 API Security
+
+Security is a core aspect of the AirBnB Clone Project.  
+The platform handles sensitive information such as user credentials, payment details, and booking data — making it critical to implement strong backend API security measures.
+
+---
+
+### 🪪 1. Authentication
+Ensures that only verified users can access the system.  
+The project will use **JSON Web Tokens (JWT)** for secure, stateless authentication.  
+When a user logs in, a token is generated and included in subsequent API requests, preventing unauthorized access.
+
+**Why it matters:**  
+Protects user accounts and prevents unauthorized parties from performing actions such as viewing or modifying private data.
+
+---
+
+### 🧾 2. Authorization
+Controls what authenticated users are allowed to do.  
+For example, a **host** can manage their own properties but cannot edit another host’s listings, while an **admin** has elevated privileges.  
+
+**Why it matters:**  
+Prevents privilege escalation and ensures users can only access data or perform actions relevant to their roles.
+
+---
+
+### 🚫 3. Rate Limiting
+Restricts how many requests a user or IP can make within a specific time frame.  
+This helps mitigate **brute-force attacks**, **spam**, and **denial-of-service (DoS)** attempts.
+
+**Why it matters:**  
+Prevents abuse of API endpoints and keeps the system stable and responsive for legitimate users.
+
+---
+
+### 🧱 4. Input Validation & Sanitization
+All user inputs will be validated and sanitized before processing.  
+This helps prevent attacks such as **SQL injection**, **Cross-Site Scripting (XSS)**, and **data corruption**.
+
+**Why it matters:**  
+Ensures only clean, safe data enters the system and protects the database from malicious queries.
+
+---
+
+### 🧠 5. Secure Data Storage
+Sensitive data, such as passwords and payment details, will never be stored in plain text.  
+Passwords are hashed using secure algorithms (e.g., **bcrypt**), and payment details are handled through secure third-party gateways like Stripe or PayPal.
+
+**Why it matters:**  
+Protects sensitive user information in case of database breaches or leaks.
+
+---
+
+### 🔐 6. HTTPS & Secure Communication
+All data transmitted between the client and the server will be encrypted using **HTTPS (SSL/TLS)**.  
+This ensures that private information cannot be intercepted or modified during transmission.
+
+**Why it matters:**  
+Prevents eavesdropping, data manipulation, and session hijacking during client-server communication.
+
+---
+
+### 🧰 7. Logging & Monitoring
+Implements real-time monitoring and detailed logging for all API activities.  
+Suspicious requests or authentication failures are recorded for security audits.
+
+**Why it matters:**  
+Helps detect and respond quickly to potential security threats or system misuse.
+
+---
+
+### 💳 8. Secure Payment Handling
+All payments are processed using trusted third-party payment gateways (like **Stripe** or **PayPal**) that comply with **PCI-DSS** security standards.
+
+**Why it matters:**  
+Ensures financial data is processed safely and reduces the risk of fraud or data theft.
+
+---
+
+By implementing these security measures, the AirBnB Clone Project ensures a **safe, reliable, and trustworthy** experience for all users — from login to booking and payment.
