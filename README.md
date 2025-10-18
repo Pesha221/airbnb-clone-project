@@ -96,3 +96,105 @@ This stack ensures that the AirBnB Clone Project is:
 - **Maintainable:** Clean architecture with modular design.
 - **Secure:** Adheres to web security best practices.
 - **User-Friendly:** Optimized for fast, responsive interfaces.
+## 🗄️ Database Design
+
+The AirBnB Clone Project uses a relational database model to manage data efficiently.  
+The key entities represent real-world objects such as users, properties, and bookings.  
+This structure ensures data integrity and supports complex relationships among users, listings, and transactions.
+
+---
+
+### 🧍‍♂️ 1. Users
+Stores information about people who use the platform — both hosts and guests.
+
+**Key Fields:**
+- `id` — unique identifier for each user  
+- `username` — the user’s display name  
+- `email` — contact email (unique)  
+- `password_hash` — securely stored password  
+- `role` — defines if the user is a host, guest, or admin  
+
+**Relationships:**
+- A **user** can own multiple **properties**.  
+- A **user** can make multiple **bookings**.  
+- A **user** can write multiple **reviews**.
+
+---
+
+### 🏠 2. Properties
+Represents the listings created by hosts.
+
+**Key Fields:**
+- `id` — unique identifier for each property  
+- `host_id` — foreign key referencing the user (owner)  
+- `title` — name of the property  
+- `description` — detailed information about the listing  
+- `price_per_night` — cost of renting the property per night  
+
+**Relationships:**
+- A **property** belongs to one **user** (host).  
+- A **property** can have many **bookings** and **reviews**.
+
+---
+
+### 📅 3. Bookings
+Tracks reservations made by guests.
+
+**Key Fields:**
+- `id` — unique identifier for each booking  
+- `user_id` — foreign key referencing the guest  
+- `property_id` — foreign key referencing the property being booked  
+- `check_in_date` — start date of the stay  
+- `check_out_date` — end date of the stay  
+
+**Relationships:**
+- A **booking** belongs to one **user** (guest).  
+- A **booking** belongs to one **property**.  
+- A **booking** may be linked to one **payment** record.
+
+---
+
+### 💳 4. Payments
+Stores details about completed or pending payments.
+
+**Key Fields:**
+- `id` — unique identifier for the payment  
+- `booking_id` — foreign key referencing the related booking  
+- `amount` — total payment amount  
+- `payment_date` — date when the payment was made  
+- `status` — payment status (e.g., pending, completed, refunded)  
+
+**Relationships:**
+- A **payment** belongs to one **booking**.  
+- Each **booking** can have one **payment** record.
+
+---
+
+### 🌟 5. Reviews
+Captures feedback from guests after a stay.
+
+**Key Fields:**
+- `id` — unique identifier for each review  
+- `user_id` — foreign key referencing the reviewer (guest)  
+- `property_id` — foreign key referencing the reviewed property  
+- `rating` — numeric score (e.g., 1–5)  
+- `comment` — guest’s written feedback  
+
+**Relationships:**
+- A **review** belongs to one **user** (guest).  
+- A **review** belongs to one **property**.  
+- A **property** can have multiple **reviews**.
+
+---
+
+### 🔗 Entity Relationships Overview
+- **User ⇄ Property:** One-to-Many (a user can list many properties)  
+- **User ⇄ Booking:** One-to-Many (a user can make multiple bookings)  
+- **Property ⇄ Booking:** One-to-Many (a property can have many bookings)  
+- **Booking ⇄ Payment:** One-to-One (each booking has one payment)  
+- **Property ⇄ Review:** One-to-Many (a property can have many reviews)  
+- **User ⇄ Review:** One-to-Many (a user can write multiple reviews)
+
+---
+
+This relational design ensures efficient data retrieval and clear associations between users, properties, bookings, reviews, and payments — forming the backbone of the AirBnB Clone platform.
