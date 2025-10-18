@@ -59,3 +59,40 @@ Protects user data, prevents vulnerabilities, and manages authentication and enc
 ## 🤝 Collaboration
 Each role works closely with the others to ensure the project meets both technical and user expectations.  
 Regular stand-up meetings, code reviews, and documentation are essential to maintaining consistency and quality across the development lifecycle.
+## 🧰 Technology Stack
+
+The AirBnB Clone Project uses a modern, scalable technology stack to ensure high performance, security, and maintainability.  
+Each component plays a specific role in building and running the application efficiently.
+
+### 🖥️ Backend
+- **Django**: A high-level Python web framework used to build robust and secure RESTful APIs quickly. Handles authentication, data models, and routing.
+- **Django REST Framework (DRF)**: Extends Django’s capabilities to easily create REST APIs that connect the backend with the frontend.
+- **GraphQL (optional)**: Provides a flexible query language for APIs, allowing clients to request exactly the data they need.
+
+### 💾 Database
+- **PostgreSQL**: A powerful, open-source relational database used for storing users, listings, and booking information. Ensures data consistency and supports complex queries.
+- **SQLite (for development)**: Lightweight local database used during development and testing before moving to production with PostgreSQL.
+
+### 🌐 Frontend
+- **React.js**: A JavaScript library for building dynamic and responsive user interfaces. It communicates with the backend APIs to render real-time data on the client side.
+- **HTML5, CSS3, JavaScript (ES6+)**: Core web technologies for building the structure, styling, and interactivity of the application.
+- **Tailwind CSS**: A utility-first CSS framework used to create modern, responsive designs quickly and efficiently.
+
+### ⚙️ DevOps & Deployment
+- **Docker**: Containerizes the application, making it easier to deploy across different environments without compatibility issues.
+- **Git & GitHub**: Used for version control, collaboration, and tracking changes throughout the project’s lifecycle.
+- **CI/CD (GitHub Actions)**: Automates testing, building, and deployment of new code to ensure reliability and consistency.
+- **Render / AWS / Heroku**: Cloud hosting services for deploying the final version of the web application.
+
+### 🔒 Security & Testing
+- **Pytest / Unittest**: Used for automated testing of backend logic and API endpoints.
+- **JWT Authentication**: Provides secure user login and session management using JSON Web Tokens.
+- **Postman**: Used to test and document API endpoints during development.
+
+---
+
+This stack ensures that the AirBnB Clone Project is:
+- **Scalable:** Easily handles increasing users and data.
+- **Maintainable:** Clean architecture with modular design.
+- **Secure:** Adheres to web security best practices.
+- **User-Friendly:** Optimized for fast, responsive interfaces.
